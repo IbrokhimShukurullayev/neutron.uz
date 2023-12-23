@@ -53,6 +53,26 @@ $(document).ready(function () {
   });
 });
 
+$(document).ready(function () {
+  $("#team-carouselss").owlCarousel({
+    margin: 30,
+    loop: true,
+    nav: true,
+    dots: true,
+    navText: ['<img src="../images/prev.svg"/>', '<img src="../images/next.svg"/>'],
+    avtodelay: true,
+    items: 6,
+    responsive: {
+      280: {
+        items: 1,
+      },
+    },
+  });
+});
+
+
+
+
 window.addEventListener("scroll", function () {
   toggleBacktop();
 });
@@ -104,7 +124,7 @@ setTimeout(() => {
 }, loadingDuration);
 
 function openNavbar() {
-  document.getElementById("navbar-responsive").style.left = "0";
+  document.getElementById("navbar-responsive").style.left = "-80px";
   // document.getElementById("navbar-responsive").style.top = "0";
 }
 function closeNavbar() {
@@ -113,6 +133,6 @@ function closeNavbar() {
 }
 
 document.getElementById("navbar-open").addEventListener("click", openNavbar);
-document.getElementById("navbar-close").addEventListener("click", closeNavbar);
+document.getElementById("navbar-close" , "body").addEventListener("click", closeNavbar);
 
 // AOS.init();

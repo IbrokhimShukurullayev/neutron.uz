@@ -51,7 +51,7 @@ button {
     font-size: 50px;
     background: var(--primary-color);
     transition: 1s;
-    z-index: 99;
+    z-index: 10000;
 }
 
 #backtop a {
@@ -74,6 +74,7 @@ button {
     justify-content: center;
     transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10000;
 }
 
 #loading.loading-none {
@@ -238,7 +239,7 @@ button {
   width: 58px;
 }
 
-#team-carousels {
+#team-carousels , #team-carouselss {
     position: relative;
 }
 
@@ -256,6 +257,23 @@ button {
     box-shadow: 0 0 5px 5px var(--primary-color);
 }
 
+ #team-carouselss :is(.owl-prev, .owl-next) {
+    position: absolute;
+    top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--primary-color);
+    box-shadow: 0 0 5px 5px var(--primary-color);
+ }
+
+.no-js .owl-carousel, .owl-carousel.owl-loaded {
+    display: flex;
+}
+
 #team-carousels .owl-prev {
     left: -20px;
 }
@@ -264,14 +282,22 @@ button {
     right: -20px;
 }
 
-#team-carousels .owl-dot span {
+#team-carouselss .owl-prev {
+    left: -10px;
+}
+
+#team-carouselss .owl-next  {
+    right: -10px;
+}
+
+#team-carousels .owl-dot span , #team-carouselss .owl-dot span  {
     width: 15px;
     height: 15px;
     background: #F7F7FA;
     transition: all 0.5s;
 }
 
-#team-carousels .owl-dot.active span {
+#team-carousels .owl-dot.active span , #team-carouselss .owl-dot.active span {
     width: 15px;
     background: #F7F7FA;
 }
